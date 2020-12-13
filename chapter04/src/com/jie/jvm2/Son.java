@@ -7,6 +7,7 @@ package com.jie.jvm2;
  * @description 解析调用中非虚方法，虚方法的测试
  * @create 2020/12/09 01:00
  */
+
 class Father {
     public Father() {
         System.out.println("father的构造器");
@@ -24,6 +25,7 @@ class Father {
         System.out.println("father 普通方法");
     }
 }
+
 public class Son extends Father{
     public Son() {
         super();
@@ -31,7 +33,7 @@ public class Son extends Father{
     public Son(int age) {
         this();
     }
-    //这是Son的静态方法，不是重写的，因为静态方法不可以被重写
+    // 这是Son的静态方法，不是重写的，因为静态方法不可以被重写
     public static void showStatic(String str) {
         System.out.println("son " + str);
     }
@@ -49,7 +51,7 @@ public class Son extends Father{
         super.showCommon();
         //invokevirtual
         showFinal();//因为此方法声明有final，不能被子类重写，所以也认为此方法是非虚方法
-        //虚方法如下：
+        // 虚方法如下：
         //invokevirtual
         showCommon();
         //invokevirtual
