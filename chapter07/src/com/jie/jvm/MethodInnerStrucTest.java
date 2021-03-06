@@ -5,25 +5,28 @@ import java.io.Serializable;
 /**
  * MethodInnerStrucTest
  * 测试方法区的内部结构
+ *
  * @author Jie
  * @description
  * @create 2020/12/24 10:38
  */
 public class MethodInnerStrucTest extends Object implements Comparable<String>, Serializable {
-    //属性
+    //域（Field）
     public int num = 10;
     private static String str = "测试方法区的内部结构";
+
     //构造器
     //方法
     public void test1() {
         int count = 20;
-        System.out.println("count = "+count);
+        System.out.println("count = " + count);
     }
-    public static int test2(int cal){
+
+    public static int test2(int cal) {
         int result = 0;
         try {
             int value = 30;
-            result = value/cal;
+            result = value / cal;
         } catch (Exception e) {
             e.printStackTrace();
         }
